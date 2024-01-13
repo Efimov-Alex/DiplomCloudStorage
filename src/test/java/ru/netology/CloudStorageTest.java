@@ -53,7 +53,7 @@ class CloudStorageTest {
 
     @BeforeAll
     public static void setUp() {
-        psql.withReuse(true);
+
         psql.start();
     }
 
@@ -62,20 +62,12 @@ class CloudStorageTest {
         psql.stop();
     }
 
-    @BeforeEach
-    void init() {
-        repository.save(
-                User.builder()
-                        .id(2L)
-                        .login("alex")
-                        .password("1234")
-                        .build()
-        );
-    }
+
 
 
     @Test
     void testLoginController() {
+        repository.save(new User(2L, "alex", "1234"));
         ResponseEntity<Login> login = authController.login(new JwtRequest("alex", "1234"));
         Assertions.assertNotNull(login.getBody().getAccessToken());
     }
