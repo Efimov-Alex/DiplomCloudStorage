@@ -15,8 +15,9 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   db:
-    image: 'postgres:15'
+    image: 'postgres:15.4-bullseye'
     container_name: db
     environment:
+      - POSTGRES_DB=netology_diplom3
       - POSTGRES_USER=root1
       - POSTGRES_PASSWORD=123
