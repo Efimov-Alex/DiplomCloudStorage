@@ -1,0 +1,104 @@
+PS I:\Netology\DiplomCloudStorage\src\main\docker> docker-compose up
+[+] Building 0.0s (0/0)                                                                                                                                                                                                  docker:default
+[+] Running 2/0
+ ✔ Container db   Created                                                                                                                                                                                                          0.0s
+ ✔ Container app  Created                                                                                                                                                                                                          0.0s
+Attaching to app, db
+db   | The files belonging to this database system will be owned by user "postgres".
+db   | This user must also own the server process.
+db   |
+db   | The database cluster will be initialized with locale "en_US.utf8".
+db   | The default database encoding has accordingly been set to "UTF8".
+db   | The default text search configuration will be set to "english".
+db   |
+db   | Data page checksums are disabled.
+db   |
+db   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db   | creating subdirectories ... ok
+db   | selecting dynamic shared memory implementation ... posix
+db   | selecting default max_connections ... 100
+db   | selecting default shared_buffers ... 128MB
+db   | selecting default time zone ... Etc/UTC
+db   | creating configuration files ... ok
+db   | running bootstrap script ... ok
+db   | performing post-bootstrap initialization ... ok
+db   | syncing data to disk ... ok
+db   |
+db   | initdb: warning: enabling "trust" authentication for local connections
+db   | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db   |
+db   | Success. You can now start the database server using:
+db   |
+db   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db   |
+db   | waiting for server to start....2024-01-14 14:40:37.393 UTC [46] LOG:  starting PostgreSQL 15.4 (Debian 15.4-2.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db   | 2024-01-14 14:40:37.394 UTC [46] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db   | 2024-01-14 14:40:37.399 UTC [49] LOG:  database system was shut down at 2024-01-14 14:40:37 UTC
+db   | 2024-01-14 14:40:37.401 UTC [46] LOG:  database system is ready to accept connections
+db   |  done
+db   | server started
+db   | CREATE DATABASE
+db   |
+db   |
+db   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db   |
+db   | 2024-01-14 14:40:37.639 UTC [46] LOG:  received fast shutdown request
+db   | waiting for server to shut down....2024-01-14 14:40:37.640 UTC [46] LOG:  aborting any active transactions
+db   | 2024-01-14 14:40:37.645 UTC [46] LOG:  background worker "logical replication launcher" (PID 52) exited with exit code 1
+db   | 2024-01-14 14:40:37.645 UTC [47] LOG:  shutting down
+db   | 2024-01-14 14:40:37.646 UTC [47] LOG:  checkpoint starting: shutdown immediate
+db   | 2024-01-14 14:40:37.698 UTC [47] LOG:  checkpoint complete: wrote 918 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.032 s, sync=0.019 s, total=0.053 s; sync files=301, longest=0.005 s, average=0.001 s; d
+istance=4217 kB, estimate=4217 kB
+db   | 2024-01-14 14:40:37.702 UTC [46] LOG:  database system is shut down
+db   |  done
+db   | server stopped
+db   |
+db   | PostgreSQL init process complete; ready for start up.
+db   |
+db   | 2024-01-14 14:40:37.769 UTC [1] LOG:  starting PostgreSQL 15.4 (Debian 15.4-2.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db   | 2024-01-14 14:40:37.769 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db   | 2024-01-14 14:40:37.770 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db   | 2024-01-14 14:40:37.770 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db   | 2024-01-14 14:40:37.772 UTC [62] LOG:  database system was shut down at 2024-01-14 14:40:37 UTC
+db   | 2024-01-14 14:40:37.776 UTC [1] LOG:  database system is ready to accept connections
+app  |
+app  |   .   ____          _            __ _ _
+app  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app  |  =========|_|==============|___/=/_/_/_/
+app  |  :: Spring Boot ::                (v2.7.0)
+app  |
+app  | 2024-01-14 14:40:38.549  INFO 1 --- [           main] ru.netology.CloudStorage                 : Starting CloudStorage v0.0.1-SNAPSHOT using Java 17.0.2 on 0aea64fd39f0 with PID 1 (/myapp.jar started by root in /)
+app  | 2024-01-14 14:40:38.551  INFO 1 --- [           main] ru.netology.CloudStorage                 : No active profile set, falling back to 1 default profile: "default"
+app  | 2024-01-14 14:40:39.729  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+app  | 2024-01-14 14:40:39.793  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interfaces.
+app  | 2024-01-14 14:40:40.903  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+app  | 2024-01-14 14:40:40.921  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+app  | 2024-01-14 14:40:40.925  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+app  | 2024-01-14 14:40:41.042  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+app  | 2024-01-14 14:40:41.042  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2412 ms
+app  | 2024-01-14 14:40:41.710  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+app  | 2024-01-14 14:40:41.742  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+app  | 2024-01-14 14:40:41.956  INFO 1 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+app  | 2024-01-14 14:40:42.050  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+app  | 2024-01-14 14:40:42.280  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+app  | 2024-01-14 14:40:42.324  INFO 1 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+app  | 2024-01-14 14:40:43.220  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+app  | 2024-01-14 14:40:43.230  INFO 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+app  | 2024-01-14 14:40:43.910  WARN 1 --- [           main] .s.s.UserDetailsServiceAutoConfiguration :
+app  |
+app  | Using generated security password: be5630db-85d8-4980-981f-7e0898b9e1b3
+app  |
+app  | This generated password is for development use only. Your security configuration must be updated before running your application in production.
+app  |
+app  | 2024-01-14 14:40:44.179  INFO 1 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@767191b1, org.springframework.secu
+rity.web.context.request.async.WebAsyncManagerIntegrationFilter@34d52ecd, org.springframework.security.web.context.SecurityContextPersistenceFilter@62db3891, org.springframework.security.web.header.HeaderWriterFilter@de8039f, org.sp
+ringframework.security.web.authentication.logout.LogoutFilter@1e469dfd, ru.netology.filter.JwtFilter@62452cc9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6944e53e, org.springframework.security.web.servleta
+pi.SecurityContextHolderAwareRequestFilter@5bc7e78e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d21202d, org.springframework.security.web.session.SessionManagementFilter@7e19755a, org.springframew
+ork.security.web.access.ExceptionTranslationFilter@5f038248, org.springframework.security.web.access.intercept.AuthorizationFilter@5b3a7ef5]
+app  | 2024-01-14 14:40:44.328  WARN 1 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly co
+nfigure spring.jpa.open-in-view to disable this warning
+app  | 2024-01-14 14:40:45.963  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+app  | 2024-01-14 14:40:45.985  INFO 1 --- [           main] ru.netology.CloudStorage                 : Started CloudStorage in 8.059 seconds (JVM running for 9.44)
