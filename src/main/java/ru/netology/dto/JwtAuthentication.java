@@ -13,11 +13,11 @@ import java.util.Collection;
 @Setter
 public class JwtAuthentication implements Authentication {
     private boolean authenticated;
-    private String login;
+    private String email;
     private Long id;
 
     public JwtAuthentication(Claims claims) {
-        login = claims.getSubject();
+        email = claims.getSubject();
         id = claims.get("id", Long.class);
     }
 
@@ -38,7 +38,7 @@ public class JwtAuthentication implements Authentication {
 
     @Override
     public Object getPrincipal() {
-        return login;
+        return email;
     }
 
     @Override
@@ -53,6 +53,6 @@ public class JwtAuthentication implements Authentication {
 
     @Override
     public String getName() {
-        return login;
+        return email;
     }
 }

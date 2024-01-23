@@ -14,6 +14,6 @@ public class CloudStorage {
 
 
 // http://localhost:8080/login
-// {"login":"alex", "password":"1234"}
+// {"email":"alex", "password":"1234"}
 
 // http://localhost:8080/file?filename=file1.txt

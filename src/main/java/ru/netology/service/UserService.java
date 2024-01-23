@@ -14,7 +14,7 @@ import java.util.Optional;
 public class UserService {
     private final UserRepository userRepository;
 
-    public Optional<User> getByLogin(@NonNull String login) {
-        return userRepository.findFirstByLogin(login);
+    public Optional<User> getByEmail(@NonNull String email) {
+        return userRepository.findFirstByEmail(email);
     }
 }
