@@ -6,6 +6,6 @@ import ru.netology.entity.User;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findFirstByEmail(String email);
+    Optional<User> findFirstByLogin(String email);
 
 }

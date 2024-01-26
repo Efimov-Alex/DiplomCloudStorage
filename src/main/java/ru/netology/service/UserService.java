@@ -15,6 +15,6 @@ public class UserService {
     private final UserRepository userRepository;
 
     public Optional<User> getByEmail(@NonNull String email) {
-        return userRepository.findFirstByEmail(email);
+        return userRepository.findFirstByLogin(email);
     }
 }

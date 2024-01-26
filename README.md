@@ -73,19 +73,18 @@ docker-compose up
 ## Тестирование работы программы
 
 /login
-![img.png](imgs/img.png)
+![img_1.png](imgs/img_1.png)
 
 /file (post)
 ![img_2.png](imgs/img_2.png)
 
 /file (get)
-![img_1.png](imgs/img_1.png)
+![img_3.png](imgs/img_5.png)
 
 /file (put)
 ![img_3.png](imgs/img_3.png)
 
 /file (delete)
-![img_6.png](imgs/img_6.png)
+![img_4.png](imgs/img_4.png)
 
-/list
-![img_5.png](imgs/img_5.png)
+
