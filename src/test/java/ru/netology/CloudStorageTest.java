@@ -63,8 +63,6 @@ class CloudStorageTest {
     }
 
 
-
-
     @Test
     void testLoginController() {
         repository.save(new User(2L, "alex", "1234"));
