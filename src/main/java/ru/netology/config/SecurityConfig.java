@@ -39,7 +39,7 @@ public class SecurityConfig implements WebMvcConfigurer {
                 .authorizeHttpRequests(
                         authz -> authz
                                 .antMatchers("/login").permitAll()
-                                .antMatchers("/file", "/list").authenticated()
+                                .antMatchers("/file", "/list").permitAll()
                                 .and()
                                 .addFilterAfter(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 ).csrf().disable().build();
